@@ -35,11 +35,11 @@ public class Board {
 
     public void print() {
 
-        System.out.println("▁▁▁▁▁▁▁▁▁▁▁▁▁");
+        System.out.println("▁▁▁▁▁▁▁");
         for (int i = 0; i < 3; i++) {
-            System.out.println("| " + cells[i][0] + " | " + cells[i][1] + " | " + cells[i][2] + " | ");
+            System.out.println("|" + cells[i][0] + "|" + cells[i][1] + "|" + cells[i][2] + "|");
         }
-        System.out.println("▔▔▔▔▔▔▔▔▔▔▔▔▔");
+        System.out.println("▔▔▔▔▔▔▔");
 
     }
 

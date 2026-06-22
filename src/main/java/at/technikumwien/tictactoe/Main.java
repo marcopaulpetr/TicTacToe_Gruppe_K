@@ -1,11 +1,7 @@
 package at.technikumwien.tictactoe;
 
-
-import java.util.Scanner;
-
 public class Main {
     static void main() {
-
 //        System.out.println("--- MANUAL TEST FOR US-01 ---");
 //        TicTacToe game = new TicTacToe();
 //        Board board = game.getBoard();
@@ -25,21 +21,13 @@ public class Main {
 //            System.out.println("Fail! Input was invalid or cell was already taken.");
 //        }
         System.out.println("=== MANUELLER TEST FÜR US-02 ===");
-
         Board board = new Board();
-
         // Test-Steine wie in eurem Beispiel setzen
         board.place(1, 0, 'O');
         board.place(1, 1, 'X');
         board.place(1, 2, '0');
-
-        char[][] cells = board.getCells();
-
         System.out.println("\nSpielfeld-Ausgabe:\n");
-
         board.print();
-
-
         System.out.println("\n=== TEST BEENDET ===");
 
     }

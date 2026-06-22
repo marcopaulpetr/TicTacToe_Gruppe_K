@@ -1,4 +1,5 @@
 package at.technikumwien.tictactoe;
+
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -7,7 +8,8 @@ public class TicTacToe {
     private Player currentPlayer = player1;
     private Board board = new Board();
 
-    public void start() {}
+    public void start() {
+    }
 
     public int[] getValidCoordinates(Scanner scanner) {
         System.out.print("row (0-2): ");
@@ -31,8 +33,18 @@ public class TicTacToe {
         return new int[]{x, y};
     }
 
-    public Player getCurrentPlayer() { return currentPlayer; }
-    public Board getBoard() { return board; }
-    public void switchCurrentPlayer() {}
-    public boolean hasWinner() { return false; }
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void switchCurrentPlayer() {
+    }
+
+    public boolean hasWinner() {
+        return false;
+    }
 }

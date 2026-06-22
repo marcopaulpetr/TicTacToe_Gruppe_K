@@ -33,6 +33,10 @@ public class Board {
         return cells;
     }
 
-    public void print() {}
-    public boolean isFull() { return false; }
+    public void print() {
+    }
+
+    public boolean isFull() {
+        return false;
+    }
 }

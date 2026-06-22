@@ -1,11 +1,14 @@
 package at.technikumwien.tictactoe;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTest {
     Board board;
+
     @BeforeEach
     public void setUp() {
         board = new Board();

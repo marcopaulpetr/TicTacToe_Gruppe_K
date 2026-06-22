@@ -8,9 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
     Player player;
+
     @BeforeEach
     void setUp() {
-        player=null;
+        player = null;
     }
 
     @AfterEach

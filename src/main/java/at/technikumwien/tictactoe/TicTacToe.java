@@ -42,6 +42,7 @@ public class TicTacToe {
     }
 
     public void switchCurrentPlayer() {
+        currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
 
     public boolean hasWinner() {

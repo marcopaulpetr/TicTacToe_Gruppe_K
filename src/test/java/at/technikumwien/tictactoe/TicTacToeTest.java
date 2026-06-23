@@ -36,14 +36,17 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void testGetCurrentPlayerPositive() {
-
-        assertNotNull(game.getCurrentPlayer());
+    public void testHasWinnerPositive() {
+        Board board = game.getBoard();
+        board.place(0, 0, 'X');
+        board.place(0, 1, 'X');
+        board.place(0, 2, 'X');
+        assertTrue(game.hasWinner());
     }
 
     @Test
-    public void testGetCurrentPlayerNegative() {
-
-        assertEquals('X', game.getCurrentPlayer().getMarker());
+    public void testHasWinnerNegative() {
+        assertFalse(game.hasWinner());
     }
+
 }

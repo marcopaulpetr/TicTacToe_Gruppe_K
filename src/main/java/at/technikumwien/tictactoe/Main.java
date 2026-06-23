@@ -20,15 +20,17 @@ public class Main {
 //        } else {
 //            System.out.println("Fail! Input was invalid or cell was already taken.");
 //        }
-        System.out.println("=== MANUELLER TEST FÜR US-02 ===");
-        Board board = new Board();
-        // Test-Steine wie in eurem Beispiel setzen
-        board.place(1, 0, 'O');
-        board.place(1, 1, 'X');
-        board.place(1, 2, '0');
-        System.out.println("\nSpielfeld-Ausgabe:\n");
-        board.print();
-        System.out.println("\n=== TEST BEENDET ===");
+//        System.out.println("=== MANUELLER TEST FÜR US-02 ===");
+//        Board board = new Board();
+//        // Test-Steine wie in eurem Beispiel setzen
+//        board.place(1, 0, 'O');
+//        board.place(1, 1, 'X');
+//        board.place(1, 2, '0');
+//        System.out.println("\nSpielfeld-Ausgabe:\n");
+//        board.print();
+//        System.out.println("\n=== TEST BEENDET ===");
+        TicTacToe game=new TicTacToe();
+        game.start();
 
     }
 

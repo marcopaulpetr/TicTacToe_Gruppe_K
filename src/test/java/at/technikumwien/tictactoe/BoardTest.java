@@ -72,4 +72,19 @@ public class BoardTest {
         board.clear();
         assertFalse(board.getCells()[0][0] == 'X');
     }
+    @Test
+    public void testIsFullPositive() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                board.place(i, j, 'X');
+            }
+        }
+        assertTrue(board.isFull());
+    }
+
+    @Test
+    public void testIsFullNegative() {
+        board.place(0, 0, 'X');
+        assertFalse(board.isFull());
+    }
 }

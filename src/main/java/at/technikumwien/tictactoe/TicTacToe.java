@@ -21,7 +21,6 @@ public class TicTacToe {
         while (true) {
             System.out.println("Current Player: " + currentPlayer.getMarker());
             board.print();
-
             int row;
             int column;
 
@@ -59,7 +58,6 @@ public class TicTacToe {
 
             switchCurrentPlayer();
         }
-
         scanner.close();
     }
 

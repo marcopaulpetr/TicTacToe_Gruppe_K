@@ -15,49 +15,72 @@ public class TicTacToe {
         currentPlayer = player1;
         board = new Board();
     }
+
     public void start() {
         Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.println("Current Player: " + currentPlayer.getMarker());
-            board.print();
-            int row;
-            int column;
-
-            do {
-                System.out.print("row (0-2): ");
-                row = scanner.nextInt();
-
-                System.out.print("column (0-2): ");
-                column = scanner.nextInt();
-
-                if (row < 0 || row > 2 ||
-                        column < 0 || column > 2 ||
-                        !board.isCellEmpty(row, column)) {
-
-                    System.out.println("Invalid move! Try again.");
+        String answer;
+        do {
+            board.clear();
+            currentPlayer = player1;
+            while (true) {
+                System.out.println("Current Player: " + currentPlayer.getMarker());
+                board.print();
+                int row;
+                int column;
+                while (true) {
+                    System.out.print("row (0-2): ");
+                    if (scanner.hasNextInt()) {
+                        row = scanner.nextInt();
+                        if (row >= 0 && row <= 2) {
+                            break;
+                        }
+                    } else {
+                        scanner.next(); // ungültige Eingabe verwerfen
+                    }
+                    System.out.println("Invalid input! Please enter a number between 0 and 2.");
                 }
-
-            } while (row < 0 || row > 2 ||
-                    column < 0 || column > 2 ||
-                    !board.isCellEmpty(row, column));
-
-            board.place(row, column, currentPlayer.getMarker());
-
-            if (hasWinner()) {
-                board.print();
-                System.out.println("Player " + currentPlayer.getMarker() + " wins!");
-                break;
+                while (true) {
+                    System.out.print("column (0-2): ");
+                    if (scanner.hasNextInt()) {
+                        column = scanner.nextInt();
+                        if (column >= 0 && column <= 2) {
+                            break;
+                        }
+                    } else {
+                        scanner.next(); // ungültige Eingabe verwerfen
+                    }
+                    System.out.println("Invalid input! Please enter a number between 0 and 2.");
+                }
+                if (!board.isCellEmpty(row, column)) {
+                    System.out.println("Cell already occupied! Try again.");
+                    continue;
+                }
+                board.place(row, column, currentPlayer.getMarker());
+                if (hasWinner()) {
+                    board.print();
+                    System.out.println("Player " + currentPlayer.getMarker() + " wins!");
+                    break;
+                }
+                if (board.isFull()) {
+                    board.print();
+                    System.out.println("Draw!");
+                    break;
+                }
+                switchCurrentPlayer();
             }
-
-            if (board.isFull()) {
-                board.print();
-                System.out.println("Draw!");
-                break;
+            while (true) {
+                System.out.print("Do you want to play again? (yes/no): ");
+                answer = scanner.next().trim().toLowerCase();
+                if (answer.equals("yes")
+                        || answer.equals("y")
+                        || answer.equals("no")
+                        || answer.equals("n")) {
+                    break;
+                }
+                System.out.println("Invalid input! Please enter yes or no.");
             }
-
-            switchCurrentPlayer();
-        }
+        } while (answer.equals("yes") || answer.equals("y"));
+        System.out.println("Thanks for playing!");
         scanner.close();
     }
 
